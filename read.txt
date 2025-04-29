@@ -1,0 +1,7 @@
+cd C:\Users\itadmin\cloudflared
+cloudflared.exe tunnel --url http://localhost:3000
+
+C:\Users\itadmin>cd C:\Users\itadmin\cloudflared
+
+C:\Users\itadmin\cloudflared>.\cloudflared.exe --version
+cloudflared version 2025.4.0 (built 2025-04-02-1525 UTC)
