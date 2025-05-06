@@ -4,7 +4,7 @@
 function OperationEnums() {
     const Operations = {
         ADDUSER:10,
-
+        QRCHECKIN:17,
         TODAYVISITS:41,
         ADDFORM:42,
         INSRTCTYPE:43,

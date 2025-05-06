@@ -6,9 +6,11 @@ const errorHandler = require('./src/middlewares/errorMiddleware');
 const logger = require('./src/utils/logger');
 const CWIRoutes = require('./src/routes/CWIRoutes');
 const ADMINRoutes = require('./src/routes/SuperAdminRoutes');
+const uploadRoutes =require('./src/routes/file.upload.router');
 const cors = require('cors');
 app.use(cors());
 app.use(express.json());
+
 
 
 // Define a basic route to test that the server is working
@@ -17,6 +19,7 @@ app.get('/', (req, res) => {
 });  
 app.use('/CWIRoutes', CWIRoutes);
 app.use('/ADMINRoutes', ADMINRoutes);
+app.use('/file_upload', uploadRoutes);
 
 app.use((req, res, next) => {
     const error = new Error('Route not found');
@@ -36,6 +39,7 @@ app.get('/error', (req, res, next) => {
 
 // Start server
 const PORT = config.PORT || 3000;
+const host = '0.0.0.0'; // This makes the server accessible externally (from any IP)
 app.listen(PORT, () => {
   logger.info(`running at http://localhost:${PORT}`);
 });
